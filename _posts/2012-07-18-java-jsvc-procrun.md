@@ -253,10 +253,10 @@ categories: java service procrun jsvc hsqldb
 Устанавливается и удаляется демон __Launchd__ следующими командами:
 
 
-    {% highlight bash %}
-    #!/bin/bash
-    sudo launchctl load /Library/LaunchDaemons/hsqldbserver.plist
-    {% endhighlight %}
+{% highlight bash %}
+#!/bin/bash
+sudo launchctl load /Library/LaunchDaemons/hsqldbserver.plist
+{% endhighlight %}
 
     {% highlight bash %}
     #!/bin/bash
