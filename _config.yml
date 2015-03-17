@@ -10,4 +10,4 @@ github_username:  alexcom
 
 # Build settings
 markdown: kramdown
-highlighter: true
+highlighter: pygments
