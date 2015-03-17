@@ -1,4 +1,4 @@
-# Site settings
+﻿# Site settings
 title: Шлакоблог
 email: a.kravets84@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
@@ -10,3 +10,4 @@ github_username:  alexcom
 
 # Build settings
 markdown: kramdown
+highlighter: true
