@@ -1,0 +1,30 @@
+#viewport {
+    position: relative;
+    height: 451px;
+    width: 405px;
+}
+
+#viewport canvas {
+    position: absolute;
+}
+
+#console {
+    width: 396px;
+    resize: vertical;
+}
+
+.center405 {
+    width: 405px;
+    margin: 0 auto;
+}
+
+#layer1 {
+    z-index: 1;
+}
+
+#layer2 {
+    z-index: 2;
+    width: 405px;
+    height: 451px;
+}
+
