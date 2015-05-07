@@ -18,4 +18,4 @@ categories: idea eclipse migration pain
 - multiple clipboards
 
 
-[quickdiff]:img/quickdiff.png
+[quickdiff]:/img/quickdiff.png
