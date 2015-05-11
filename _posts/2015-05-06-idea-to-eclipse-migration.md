@@ -11,9 +11,9 @@ categories: idea eclipse migration pain
 ###VCS
 и интеграция с ней - важнейший инструмент. Как минимум, он отмечает цветной полоской область измененного, добавленного или удаленного текста. Эта функциональность есть в Eclipse для JEE разработки из коробки, но нуждается в настройке под нужды программиста. Зайдём в *Preferences->General->Editors->Text Editors->Quick Diff*. Если функция отключена - включаем, а также отмечаем галочку **Show differences in overview ruller**. Лично я также изменяю цвета на отдаленно напоминающие идеевские. Осталось ещё одно, но весьма важное: указать источник данных о версиях. В поле подписанном **Use this reference source** выбираем милую сердцу систему. В моём случае это GIT.
 
-<center>![Quick Diff Settings][qd]
+<center>![Quick Diff Settings][qd]</center>
 
-*Примерно так должны выглядеть настройки Quick Diff*</center>
+<center>*Примерно так должны выглядеть настройки Quick Diff*</center>
 
 ![Quick Diff In Action][qds]
 
