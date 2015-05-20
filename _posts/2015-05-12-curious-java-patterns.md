@@ -4,6 +4,10 @@ title:  "Любопытные паттерны в Java-программиров�
 date:   2016-05-12 19:00:00
 categories: idea eclipse migration pain
 ---
+<font color="red">#THIS IS A DRAFT</font>
+
+
+
 ###Local return
 
 
