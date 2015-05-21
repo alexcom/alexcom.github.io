@@ -10,7 +10,7 @@ categories: java curious_patterns
 
 ###Local return
 
-
+{% syntaxhighlight java %}
 	public static void main(String[] args)
 	{
 		System.out.println("1");
@@ -26,6 +26,7 @@ categories: java curious_patterns
 		}
 		System.out.println("4");
 	}
+{% end syntaxhighlight %}
 
 ###Enum strategy
 
