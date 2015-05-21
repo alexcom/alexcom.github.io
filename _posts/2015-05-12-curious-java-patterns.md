@@ -11,24 +11,36 @@ categories: java curious_patterns
 ###Local return
 
 {% highlight java %}
-	public static void main(String[] args)
+public static void main(String[] args)
+{
+	System.out.println("1");
+	test :
 	{
-		System.out.println("1");
-		test :
+		System.out.println("2");
+		if (true)	// this check prevents compiler from knowing that line 3 is
+					// not reachable
 		{
-			System.out.println("2");
-			if (true)	// this check prevents compiler from knowing that line 3 is
-						// not reachable
-			{
-				break test;
-			}
-			System.out.println("3");// 3
+			break test;
 		}
-		System.out.println("4");
+		System.out.println("3");// 3
 	}
+	System.out.println("4");
+}
 {% endhighlight %}
 
 ###Enum strategy
 
+В Java enum - не просто набор констант. В какой-то момент было решено, что обычные константы в силе C небезопасны. Если у вас есть два статически импортированных класса с константами, имеющими одинаковое имя, никогда не знаешь какой из них ты используешь по имени константы. Это может привести к неприятным последствиям. Среда импортировала не то, а потом у тебя в базе данных в нужном поле не то значение. Если же от него зависит важная бизнесс-логика, то это вообще катастрофа. И, надо заметить, это не единственная проблема такого подхода. Посему было решено сделать перечислимые константы типо-безопасными. Сегодня каждый enum в Java это по сути *абстрактный класс*. Каждая "константа" внутри него - наследник этого класса. Теперь невозможно присвоить "константу" полю не того типа, не сделав при этом явных преобразований. Замечательно! Кроме того в Java инамы получили синтаксическую поддержку в самом языке, что сделало работу с ними ещё удобнее. Однако и на этом не всё. Поскольку enum это класс, появляется возможность наделить его некоторым поведением. Согласно заветам Линуса Торвальдса, сразу покажу код.
+
+{% highlight java %}
+enum Operation{
+    ADD,
+    MULTIPLY;
+
+    abstract double apply(double a,double b);
+}
+{% endhighlight %}
+
+Тут ваша среда разработки услужливо подсветит *ADD* и *MULTIPLY*. Ведь они по сути - подклассы, а значит должны дать реализацию абстрактному методу *apply*.
 
 ###
