@@ -35,7 +35,7 @@ public static void main(String[] args)
 	{
 		System.out.println("2");
 		if (true)	// эта проверка мешает компилятору 
-					// понять что строка 3 недостежима
+				// понять что строка 3 недостежима
 		{
 			break test;
 		}
