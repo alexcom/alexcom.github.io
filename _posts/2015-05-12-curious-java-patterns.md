@@ -68,7 +68,3 @@ enum Operation{
 {% endhighlight %}
 
 Тут ваша среда разработки услужливо подсветит *ADD* и *MULTIPLY*. Ведь они по сути - подклассы, а значит должны дать реализацию абстрактному методу *apply*.
-
-###Копирование C-style
-Locale
-System.arraycopy(isoCountries, 0, result, 0, isoCountries.length);
