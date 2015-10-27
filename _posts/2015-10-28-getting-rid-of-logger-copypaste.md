@@ -14,7 +14,7 @@ public class SomeLogic {
 }
 {% endhighlight %}
 
-On one hang he was right that and I sacrificed some memory to have cleaner code. On the other hand he stated that everyone is suffering but continues to use static logger instances with hand-coded names of classes. And I must do that too. Thanks, but I'm not buying this bullshit. Not anymore. The answer to "how to make it better" is below and it uses API that appeared in Java 7, that is in summer of 2011.
+On one hand he was right that I sacrificed some memory to have cleaner code. On the other hand he stated that everyone is suffering but continues to use static logger instances with hand-coded names of classes. And I must do that too. Thanks, but I'm not buying this bullshit. Not anymore. The answer to "how to make it better" is below and it uses API that appeared in Java 7, that is in summer of 2011.
 
 {% highlight java %}
 public class SomeAwesomeLogic {
@@ -23,3 +23,4 @@ public class SomeAwesomeLogic {
 {% endhighlight %}
 
 **Learn your languages libraries, colleagues!**
+**И уж извините, что по англицки. Сами мы местные, но очень уж хочется перестать таковыми быть :-)**
