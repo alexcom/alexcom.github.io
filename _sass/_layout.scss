@@ -187,9 +187,17 @@
     display: block;
     font-size: 24px;
 }
-
-
-
+.internal-content {
+    float: left;
+    padding-right: 10px;
+    width: -webkit-calc(100% - 175px);
+    width:         calc(100% - 175px);
+}
+.someads {
+    float: left;
+    width: 160px;
+    height: 600px;
+}
 /**
  * Posts
  */
