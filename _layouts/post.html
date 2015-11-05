@@ -11,16 +11,19 @@ layout: default
   <article class="post-content">
     {{ content }}
   </article>
-  <div id="someads">
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- shlakoblog.pp.ua -->
-	<ins class="adsbygoogle"
-	     style="display:inline-block;width:160px;height:600px"
-	     data-ad-client="ca-pub-4796113065395303"
-	     data-ad-slot="3669074870"></ins>
-	<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-  </div>
+  <div id="disqus_thread"></div>
+  <script>
+      var disqus_config = function () {
+          this.page.url = '{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}';
+          this.page.identifier = '{{page.title}}';
+      };
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//shlakoblog.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 </div>
