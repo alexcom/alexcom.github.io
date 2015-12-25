@@ -13,13 +13,13 @@ to remind myself about some often used features of JBoss application server( ver
 
 ###Datasource configuration (PostgreSQL example)
 
-The first and main snippet is the DataSource. Everyone knows how to set it up, so I won't explain it in detail.
+The first and main snippet is the DataSource. Everyone knows how to set it up, so I won't explain it in detail. In particular you'll have to google how to add jdbc driver :-).
 
 {% highlight xml %}
-    <datasource jta="false" jndi-name="java:jboss/britta" pool-name="Britta" enabled="true" use-ccm="false">
-        <connection-url>jdbc:postgresql://localhost/britta</connection-url>
+    <datasource jta="false" jndi-name="java:jboss/myDS" pool-name="myPool" enabled="true" use-ccm="false">
+        <connection-url>jdbc:postgresql://localhost/myDB</connection-url>
         <driver-class>org.postgresql.Driver</driver-class>
-        <driver>postgresql-9.1-901-1.jdbc4.jar</driver>
+        <driver>postgresql</driver>
         <security>
             <user-name>postgres</user-name>
             <password>postgres</password>
