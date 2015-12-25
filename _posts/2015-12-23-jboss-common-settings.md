@@ -5,13 +5,11 @@ date:   2015-12-23 00:00:00
 categories: java JEE JPA 
 ---
 
-<font style="color:red">THIS IS A DRAFT</font>
-
 ##Just
 to remind myself about some often used features of JBoss application server( version 7 in particular) I'll collect here some of the snippets I use all the time in almost each and every application.
 
 
-###Datasource configuration (PostgreSQL example)
+###Datasource configuration
 
 The first and main snippet is the DataSource. Everyone knows how to set it up, so I won't explain it in detail. In particular you'll have to google how to add jdbc driver :-).
 
