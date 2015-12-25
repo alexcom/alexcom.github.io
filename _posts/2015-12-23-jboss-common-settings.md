@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Common JBoss standalone.xml snippets"
-date:   2015-10-31 00:00:00 
+date:   2015-12-23 00:00:00 
 categories: java JEE JPA 
 ---
 
@@ -16,6 +16,7 @@ to remind myself about some often used features of JBoss application server( ver
 The first and main snippet is the DataSource. Everyone knows how to set it up, so I won't explain it in detail. In particular you'll have to google how to add jdbc driver :-).
 
 {% highlight xml %}
+
     <datasource jta="false" jndi-name="java:jboss/myDS" pool-name="myPool" enabled="true" use-ccm="false">
         <connection-url>jdbc:postgresql://localhost/myDB</connection-url>
         <driver-class>org.postgresql.Driver</driver-class>
@@ -32,6 +33,7 @@ The first and main snippet is the DataSource. Everyone knows how to set it up, s
             <share-prepared-statements>false</share-prepared-statements>
         </statement>
     </datasource>
+    
 {% endhighlight %}
 
 ###Authentication
@@ -63,6 +65,6 @@ To use it you will have to create tables like these:
     );
 {% endhighlight %}
 
-Of cource you can do a single table and rewrite queries. It's flexible in JBoss.
+Of cource you can do a single table and rewrite queries if you need single role. It's flexible in JBoss.
 
 ###Email settings
