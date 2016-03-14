@@ -23,5 +23,4 @@ powershell.exe -command ${SAY_SCRIPT}
 
 ###The conclusion
 Even if you are mentally healthy it's extreemely pleasant to have something on your machine that's reporting to you :)
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hkwcehPhOXw" frameborder="0" allowfullscreen></iframe>
