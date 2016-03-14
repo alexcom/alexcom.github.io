@@ -32,7 +32,7 @@ The first and main snippet is the DataSource. Everyone knows how to set it up, s
 </datasource>
 ```
 
-###Authentication
+### Authentication
 This is essential if you need *User* concept in your application.
 
 ```xml
