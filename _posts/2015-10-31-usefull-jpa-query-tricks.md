@@ -15,7 +15,7 @@ Sometimes I need only check object existance without getting a proxy to entity.
 select case when count(s)>1 then true else false end from Subscription s where s.id=:subId
 ```
 
-###Constructor query
+### Constructor query
 
 This is usefull in many ways. First, your object does not have to be an entity. So this is ideal to fill some DTOs with data from complex join query. Second, even if it's an entity, created through constructor it will always be detached and having all fields initialized, so your brain could rest a little without struggle with lazy initialization errors.
 

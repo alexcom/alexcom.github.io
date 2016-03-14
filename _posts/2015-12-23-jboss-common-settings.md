@@ -5,15 +5,15 @@ date:   2015-12-23 00:00:00
 categories: java JEE JPA 
 ---
 
-##Just
+## Just
 to remind myself about some often used features of JBoss application server( version 7 in particular) I'll collect here some of the snippets I use all the time in almost each and every application.
 
 
-###Datasource configuration
+### Datasource configuration
 
 The first and main snippet is the DataSource. Everyone knows how to set it up, so I won't explain it in detail. In particular you'll have to google how to add jdbc driver :-).
 
-{% highlight xml %}
+```xml
 <datasource jta="false" jndi-name="java:jboss/myDS" pool-name="myPool" enabled="true" use-ccm="false">
     <connection-url>jdbc:postgresql://localhost/myDB</connection-url>
     <driver-class>org.postgresql.Driver</driver-class>
@@ -30,12 +30,12 @@ The first and main snippet is the DataSource. Everyone knows how to set it up, s
         <share-prepared-statements>false</share-prepared-statements>
     </statement>
 </datasource>
-{% endhighlight %}
+```
 
 ###Authentication
 This is essential if you need *User* concept in your application.
 
-{% highlight xml %}
+```xml
 <security-domain name="my-security">
     <authentication>
         <login-module code="org.jboss.security.auth.spi.DatabaseServerLoginModule" flag="required">
@@ -45,11 +45,11 @@ This is essential if you need *User* concept in your application.
         </login-module>
     </authentication>
 </security-domain>
-{% endhighlight %}
+```
 
 To use it you will have to create tables like these:
 
-{% highlight sql %}
+```sql
 create table users(
   name varchar(50) primary key,
   password varchar(255)
@@ -59,28 +59,28 @@ create table user_roles(
   role varchar(50),
   foreign key (name) references users(name)
 );
-{% endhighlight %}
+```
 
 Of cource you can do a single table and rewrite queries if you need single role. It's flexible in JBoss.
 
-###Email settings
+### Email settings
 
 I use SMTP via GMail, so here's how to configure it.
 First, define the outbound socket like this:
 
-{% highlight xml %}
+```xml
 <outbound-socket-binding name="mail-gmail" source-port="0" fixed-source-port="false">
     <remote-destination host="smtp.googlemail.com" port="465"/>
 </outbound-socket-binding>
-{% endhighlight %}
+```
 
 Then just add a mail session configuration.
 
-{% highlight xml %}
+```xml
 <mail-session jndi-name="java:jboss/mail/mymail">
     <smtp-server ssl="true" outbound-socket-binding-ref="mail-gmail">
         <login name="myemail@gmail.com" password="mypassword"/>
     </smtp-server>
 </mail-session>
-{% endhighlight %}
+```
 
