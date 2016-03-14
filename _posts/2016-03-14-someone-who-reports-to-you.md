@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Someone who reports to you"
-date: 2016-03-14 17:06:00
+date:   2016-03-14 00:00:00
 categories: automation
 tags: powershell bash build
 ---
