@@ -10,6 +10,6 @@ twitter_username: akravets84
 github_username:  alexcom
 
 # Build settings
-markdown: kramdown
-highlighter: rouge
+#markdown: kramdown
+#highlighter: rouge
 
