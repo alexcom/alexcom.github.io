@@ -15,4 +15,16 @@ It defines precedence order. For example for simple arithmetic expression langua
 When you define a keyword you can get into situation when language user can enter same word but in text part of language statement and it is interpreted by as keyword which will break syntax. Basically that means that you can't use keywords in text clauses. Unless you define them as alternative for word using '|'.
 E.g.:
  You have simple query language where query looks like this:
- {{language:
+ ```
+ text=some true thing OR allCaps=true
+ ```
+ With broken syntax definition this can be interpreted as 
+ 
+ 1. text=some // incorrect short text clause
+ 2. true // boolean literal out of place
+ 3. thing // text literal out of place
+ 4. OR allCaps=true //correct boolean part
+ 
+ 
+ 
+ 
