@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: Stepping on ANTLR's rakes
-date: 2016-12-22T14:12:00.000Z
+date: {}
 categories: java antlr parser
 tags: java antlr parser
 ---
@@ -31,7 +31,7 @@ E.g.:
  4. OR allCaps=true //correct boolean part
  
  In this case to give parser a hint that *true* may also be a simple word, not a keyword, you would specify corresponding rule for a *WORD* as follows:
- ```antlr
+ ```
 fragment E : [eE];
 fragment R : [rR];
 fragment T : [tT];
