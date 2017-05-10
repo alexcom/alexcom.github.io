@@ -12,7 +12,7 @@ Include it explicitely in the end of the root rule.
 It defines precedence order. For example for simple arithmetic expression language you would place  * over + in the rule. This makes development of languages where precedence is important easy as a piece of pie.
 
 ### Freaking keywords
-When you define a keyword you can get into situation when language user can enter same word but in text part of language statement and it is interpreted by as keyword which will break syntax. Basically that means that you can't use keywords in text clauses. Unless you define them as alternative for word using '|'.
+When you define a keyword you can get into situation when language user can enter same word but in text part of language statement and it is interpreted by ANTLR as a keyword and will fail syntax check. Basically that means that you can't use keywords in text clauses. Unless you define them as alternative for word using '|'.
 E.g.:
  You have simple query language where query looks like this:
  ```
@@ -25,6 +25,10 @@ E.g.:
  3. thing // text literal out of place
  4. OR allCaps=true //correct boolean part
  
- 
- 
+ In this case to give parser a hint that *true* may also be a simple word, not a keyword, you would specify corresponding rule for a *WORD* as follows:
+ ```antlr
+ WORD : LETTER*
+      | 'true'
+      ;
+ ```
  
