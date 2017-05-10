@@ -27,9 +27,15 @@ E.g.:
  
  In this case to give parser a hint that *true* may also be a simple word, not a keyword, you would specify corresponding rule for a *WORD* as follows:
  ```antlr
+fragment E : [eE];
+fragment R : [rR];
+fragment T : [tT];
+fragment U : [uU];
+ 
  ID : [a-zA-Z0-9_]+;
+ TRUE: T R U E;
  WORD : ID*
-      | 'true'
+      | TRUE
       ;
  ```
- 
+ Here I have to mention that to be able to do that you also have to define each letter as individual token and define all keywords via those fragment tokens. Well, that's the price you pay for flexibility.
