@@ -27,7 +27,8 @@ E.g.:
  
  In this case to give parser a hint that *true* may also be a simple word, not a keyword, you would specify corresponding rule for a *WORD* as follows:
  ```antlr
- WORD : LETTER*
+ ID : [a-zA-Z0-9_]+;
+ WORD : ID*
       | 'true'
       ;
  ```
