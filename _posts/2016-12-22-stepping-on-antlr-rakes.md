@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## ANTLR 4
 Some quick bullet points to remember things I learned through experiense while developing query language for a software product on my job.
