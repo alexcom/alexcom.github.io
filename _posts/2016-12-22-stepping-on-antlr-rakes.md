@@ -2,7 +2,6 @@
 published: true
 layout: post
 title: Stepping on ANTLR's rakes
-date: {}
 categories: java antlr parser
 tags: java antlr parser
 ---
