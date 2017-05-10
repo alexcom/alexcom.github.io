@@ -1,5 +1,10 @@
 ---
 published: true
+layout: post
+title: Stepping on ANTLR's rakes
+date: 2016-12-22T14:12:00.000Z
+categories: java antlr parser
+tags: java antlr parser
 ---
 ## ANTLR 4
 Some quick bullet points to remember things I learned through experiense while developing query language for a software product on my job.
