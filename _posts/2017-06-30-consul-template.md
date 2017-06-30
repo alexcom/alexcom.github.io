@@ -42,7 +42,13 @@ Let's remove those things that are not our responsibility. We can do it with a h
 Now you only process services that have `myapps` in tag list.
 
 
-Let's define an upstream.
+Let's define an upstream. We'll reference a service name through variable.
+
+```
+upstream {{$services.Name}} {
+	...
+}
+```
 
 
 ```
