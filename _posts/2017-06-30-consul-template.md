@@ -70,6 +70,7 @@ To be honest this code will generate a lot of unnecessary whitespaces and newlin
 Final template could look like this:
 
 ```text
+{% raw %}
 {{range $services := services}}
 {{- if in $services.Tags "myapp"}}
 upstream {{$services.Name}} {
@@ -78,4 +79,5 @@ upstream {{$services.Name}} {
 	{{- end}}
 }
 {{- end}}{{end}}
+{% endraw %}
 ```
