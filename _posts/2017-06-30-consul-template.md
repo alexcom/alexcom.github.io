@@ -78,3 +78,5 @@ upstream {{$services.Name}} {
 {{- end}}{{end}}
 {% endraw %}
 ```
+
+Feel free to comment and tell me that I'm a fool and know nothing of what I'm writing about. There's definitely some truth in it :)
