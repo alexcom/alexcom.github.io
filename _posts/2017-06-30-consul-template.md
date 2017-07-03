@@ -15,7 +15,7 @@ What you probably want is to:
 1. iterate over services
 2. filter out infrastructural components like DBs, queues etc.
 3. define upstream block for each service
-4. enumerate all service instances inside that block
+4. enumerate all service instances inside that block along with their IPs and ports
 
 Let's see... query and at the same time iteration in this strange language is done with `range`.
 Like this:
