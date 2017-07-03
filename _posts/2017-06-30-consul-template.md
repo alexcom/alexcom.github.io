@@ -27,7 +27,7 @@ Like this:
 {% endraw %}
 ```
 To avoid confusion later I will assign services to variable.
-```
+```text
 {% raw %}
 {{range $services := services}}
 ...
@@ -37,7 +37,8 @@ To avoid confusion later I will assign services to variable.
 First checkpoint done. We can reference service name in next commands.
 Let's remove those things that are not our responsibility. We can do it with a help of tags and simple conditional check. If you didn't tag your services you definitely should! I will not describe it here though. Google is your friend.
 
-```
+```text
+{% raw %}
 {{if in $services.Tags "myapp"}}
 ...
 {{end}}
@@ -47,13 +48,15 @@ Now you only process services that have `myapps` in tag list.
 
 Let's define an upstream. We'll reference a service name through variable.
 
-```
+```text
+{% raw %}
 upstream {{$services.Name}} {
 	...
 }
 ```
 Now what's left is to go enumerate service instances using familiar already `range` and `.` as a specifier for current object in server template.
-```
+```text
+{% raw %}
 {{range service $services.Name "any"}}
 	server {{.Address}}:{{.Port}};
 {{end}}
@@ -63,7 +66,7 @@ To be honest this code will generate a lot of unnecessary whitespaces and newlin
 
 Final template could look like this:
 
-```
+```text
 {{range $services := services}}
 {{- if in $services.Tags "myapp"}}
 upstream {{$services.Name}} {
