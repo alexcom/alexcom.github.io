@@ -42,6 +42,7 @@ Let's remove those things that are not our responsibility. We can do it with a h
 {{if in $services.Tags "myapp"}}
 ...
 {{end}}
+{% endraw %}
 ```
 Now you only process services that have `myapps` in tag list.
 
@@ -53,6 +54,7 @@ Let's define an upstream. We'll reference a service name through variable.
 upstream {{$services.Name}} {
 	...
 }
+{% endraw %}
 ```
 Now what's left is to go enumerate service instances using familiar already `range` and `.` as a specifier for current object in server template.
 ```text
@@ -60,6 +62,7 @@ Now what's left is to go enumerate service instances using familiar already `ran
 {{range service $services.Name "any"}}
 	server {{.Address}}:{{.Port}};
 {{end}}
+{% endraw %}
 ```
 
 To be honest this code will generate a lot of unnecessary whitespaces and newlines which could make config file sparse and strange looking. And it's normal. Fortunately guys behind consul-template implemented a hack to trim those characters. It's done by adding `-` inside curly braces.
