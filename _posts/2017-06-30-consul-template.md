@@ -50,7 +50,7 @@ Let's define an upstream. We'll reference a service name through variable.
 ```text
 {% raw %}
 upstream {{$services.Name}} {
-	...
+...
 }
 {% endraw %}
 ```
