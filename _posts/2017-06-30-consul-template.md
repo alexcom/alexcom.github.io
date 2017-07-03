@@ -19,10 +19,12 @@ What you probably want is to:
 
 Let's see... query and at the same time iteration in this strange language is done with `range`.
 Like this:
-```
-{{"{{range services" }}}}
+```text
+{% raw %}
+{{range services}}
 ...
-{{"{{end"}}}}
+{{end}}
+{% endraw %}
 ```
 To avoid confusion later I will assign services to variable.
 ```
