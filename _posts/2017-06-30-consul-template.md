@@ -25,10 +25,10 @@ Like this:
 {{"{{end"}}}}
 ```
 To avoid confusion later I will assign services to variable.
-```
+```{%
 {{range $services := services}}
 ...
-{{end}}
+{{end}}%}
 ```
 First checkpoint done. We can reference service name in next commands.
 Let's remove those things that are not our responsibility. We can do it with a help of tags and simple conditional check. If you didn't tag your services you definitely should! I will not describe it here though. Google is your friend.
