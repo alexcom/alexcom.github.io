@@ -1,24 +1,23 @@
 ---
-published: false
+published: true
 ---
-## Generating upstreams from Consul data with Consul-template
+## Generating NginX upstreams from Consul data with Consul-template
 
 ### (Not so) Boring introduction
 Since you are here you want the solution. So cut the crap!
 
-### So you have some services registered in Consul
+### You have some services registered in Consul
 
-Guys who wrote Go's templating language are completely insane. As one (Clojure) guy said you have to be a little bit insane to create your own language. This language is too different from all what I used to in Java world. Well... nevermind.
+Guys who wrote Go's templating language are insane. As one (Clojure) guy said you have to be a little bit insane to create your own language. And this language is too different from all what I used to in Java world. Well... nevermind.
 
 I'll demo this freaking template for a file with NginX upstream definitions.
-What we probably want is to
+What you probably want is to:
 1. iterate over services
 2. filter out infrastructural components like DBs, queues etc.
-3. define upstream block
-4. enumerate all server instances inside upstream block
+3. define upstream block for each service
+4. enumerate all service instances inside that block
 
-Let's see... query and at the same time iteration in this strange language is `range`.
-
+Let's see... query and at the same time iteration in this strange language is done with `range`.
 Like this:
 ```
 {{range services}}
@@ -32,10 +31,10 @@ To avoid confusion later I will assign services to variable.
 {{end}}
 ```
 First checkpoint done. We can reference service name in next commands.
-Let's remove those things that are not our responsibility. We can do it with a help of tags and simple conditional check. If you didn't tag your services you definitely should! I will not describe it here. Google is your friend.
+Let's remove those things that are not our responsibility. We can do it with a help of tags and simple conditional check. If you didn't tag your services you definitely should! I will not describe it here though. Google is your friend.
 
 ```
-{{- if in $services.Tags "myapp"}}
+{{if in $services.Tags "myapp"}}
 ...
 {{end}}
 ```
@@ -49,7 +48,16 @@ upstream {{$services.Name}} {
 	...
 }
 ```
+Now what's left is to go enumerate service instances using familiar already `range` and `.` as a specifier for current object in server template.
+```
+{{range service $services.Name "any"}}
+	server {{.Address}}:{{.Port}};
+{{end}}
+```
 
+To be honest this code will generate a lot of unnecessary whitespaces and newlines which could make config file sparse and strange looking. And it's normal. Fortunately guys behind consul-template implemented a hack to trim those characters. It's done by adding `-` inside curly braces.
+
+Final template could look like this:
 
 ```
 {{range $services := services}}
