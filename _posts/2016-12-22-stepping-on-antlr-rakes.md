@@ -12,7 +12,7 @@ Some quick bullet points to remember things I learned through experiense while d
 
 Include it explicitely in the end of the root rule.
 
-### The layout of alternatives inside rule has sense
+### The layout of alternatives inside rule makes sense
 It defines precedence order. For example for simple arithmetic expression language you would place  * over + in the rule. This makes development of languages where precedence is important easy as a piece of pie.
 
 ### Freaking keywords
