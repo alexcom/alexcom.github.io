@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## Authentication and authorization are hard
 
